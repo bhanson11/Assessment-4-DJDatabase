@@ -4,7 +4,6 @@
 
 <h1>Add a New Playlist!</h1>
 <form method="POST">
-    {{ form.hidden.tag() }}
     <div>
         {{ form.name.label }}
         {{ form.name }}
@@ -15,4 +14,5 @@
     </div>
     <button type="submit">Create Playlist</button>
 </form>
+
 {% endblock %}

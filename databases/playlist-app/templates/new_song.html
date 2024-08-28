@@ -2,9 +2,8 @@
 
 {% block content %}
 
-<h1>Submit new song!</h1>
+<h1>Submit New Song!</h1>
 <form method="POST">
-    {{ form.hidden.tag() }}
     <div>
         {{ form.title.label }}
         {{ form.title }}
@@ -13,7 +12,7 @@
         {{ form.artist.label }}
         {{ form.artist }}
     </div>
-    <button type="submit">Create Playlist</button>
+    <button type="submit">Add Song</button>
 </form>
 
 {% endblock %}

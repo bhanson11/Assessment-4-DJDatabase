@@ -11,8 +11,8 @@ class Playlist(db.Model):
     __tablename__ = 'playlists'
 
     id = db.Column(db.Integer(), primary_key=True, autoincrement=True)
-    name = db.Column(db.String(40), nullable=False)
-    description = db.Column(db.String(200), nullable=False)
+    name = db.Column(db.String(), nullable=False)
+    description = db.Column(db.String(), nullable=False)
 
     songs = db.relationship('PlaylistSong', back_populates='playlist')
 
@@ -22,8 +22,8 @@ class Song(db.Model):
     __tablename__ = 'songs'
 
     id = db.Column(db.Integer(), primary_key=True, autoincrement=True)
-    title = db.Column(db.String(30), nullable=False)
-    artist = db.Column(db.String(30), nullable=False)    
+    title = db.Column(db.String(), nullable=False)
+    artist = db.Column(db.String(), nullable=False)    
 
     playlists = db.relationship('PlaylistSong', back_populates='song')
 
