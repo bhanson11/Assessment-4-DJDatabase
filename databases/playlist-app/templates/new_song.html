@@ -4,6 +4,7 @@
 
 <h1>Submit New Song!</h1>
 <form method="POST">
+    {{ form.hidden_tag() }}
     <div>
         {{ form.title.label }}
         {{ form.title }}
