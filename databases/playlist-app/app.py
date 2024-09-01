@@ -47,6 +47,11 @@ def show_playlist(playlist_id):
     """Show detail on specific playlist."""
 
     # ADD THE NECESSARY CODE HERE FOR THIS ROUTE TO WORK
+    playlist = Playlist.query.get_or_404(playlist_id)
+
+    songs = [ps.song for ps in playlist.songs]
+
+    return render_template("playlist.html", playlist=playlist, songs=songs)
 
 
 @app.route("/playlists/add", methods=["GET", "POST"])
@@ -90,6 +95,11 @@ def show_song(song_id):
     """return a specific song"""
 
     # ADD THE NECESSARY CODE HERE FOR THIS ROUTE TO WORK
+    song = Song.query.get_or_404(song_id)
+
+    playlists = [ps.playlist for ps in song.playlists]
+
+    return render_template("song.html", song=song, playlists=playlists)
 
 
 @app.route("/songs/add", methods=["GET", "POST"])
