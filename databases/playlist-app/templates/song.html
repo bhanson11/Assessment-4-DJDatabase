@@ -7,8 +7,17 @@
   <p class="lead">&ndash; {{ song.artist }}</p>
 </div>
 
-<ul>
-  DISPLAY ALL OF THE PLAYLISTS THAT THIS SONG IS A PART OF
-</ul>
+<div>
+  <h3>Playlists with this song:</h3>
+  {% if playlists %}
+    <ul>
+      {% for playlist in playlists %}
+        <li><a href="/playlists/{{ playlist.id }}">{{ playlist.name }}</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>This song is not part of any playlists</p>
+  {% endif %}
+</div>
 
 {% endblock %}
