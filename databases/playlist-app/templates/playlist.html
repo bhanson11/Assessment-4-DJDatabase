@@ -10,7 +10,7 @@
 </div>
 
 
-<div class="text-danger">
+<div>
   {% if songs %}
     <ul>
       {% for song in songs %}
@@ -18,7 +18,7 @@
         {% endfor %}
     </ul>
   {% else %}
-    <p>No songs in this playlist</p>
+    <p class="text-danger">No songs in this playlist</p>
   {% endif %}  
 </div>
 
